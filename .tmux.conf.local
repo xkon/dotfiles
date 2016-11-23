@@ -1,5 +1,4 @@
-# fork from https://github.com/gpakosz/.tmux
-# and adjust to my situation
+# https://github.com/gpakosz/.tmux
 # (‑●‑●)> released under the WTFPL v2 license, by Gregory Pakosz (@gpakosz)
 
 
@@ -177,7 +176,7 @@ tmux_conf_theme_pairing_bg='none'
 tmux_conf_theme_pairing_attr='none'
 
 # prefix indicator
-tmux_conf_theme_prefix='⌨'            # U+2328
+tmux_conf_theme_prefix='⌨  '            # U+2328
 tmux_conf_theme_prefix_fg='none'
 tmux_conf_theme_prefix_bg='none'
 tmux_conf_theme_prefix_attr='none'
@@ -238,7 +237,8 @@ tmux_conf_theme_clock_style='24'
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
 #set -g status-keys vi
-#set -g mode-keys vi
+set -g mode-keys vi
+bind -t vi-copy y copy-pipe 'xclip -in -selection clipboard'
 
 # move status line to top
 #set -g status-position top
